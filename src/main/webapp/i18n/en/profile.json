@@ -1,0 +1,32 @@
+{
+  "customerManagerApp": {
+    "profile": {
+      "home": {
+        "title": "Profiles",
+        "createLabel": "Create a new Profile",
+        "createOrEditLabel": "Create or edit a Profile",
+        "search": "Search for Profile",
+        "notFound": "No Profiles found"
+      },
+      "created": "A new Profile is created with identifier {{ param }}",
+      "updated": "A Profile is updated with identifier {{ param }}",
+      "deleted": "A Profile is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Profile {{ id }}?"
+      },
+      "detail": {
+        "title": "Profile"
+      },
+      "phoneNumber": "Phone Number",
+      "dateOfBirth": "Date Of Birth",
+      "profileId": "Profile Id",
+      "gender": "Gender",
+      "validId": "Valid Id",
+      "user": "User",
+      "address": "Address",
+      "hardware": "Hardware",
+      "software": "Software",
+      "training": "Training"
+    }
+  }
+}

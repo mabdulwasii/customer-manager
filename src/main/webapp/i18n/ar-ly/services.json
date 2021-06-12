@@ -1,0 +1,29 @@
+{
+  "customerManagerApp": {
+    "services": {
+      "home": {
+        "title": "Services",
+        "createLabel": "Create a new Services",
+        "createOrEditLabel": "Create or edit a Services",
+        "search": "Search for Services",
+        "notFound": "No Services found"
+      },
+      "created": "A new Services is created with identifier {{ param }}",
+      "updated": "A Services is updated with identifier {{ param }}",
+      "deleted": "A Services is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Services {{ id }}?"
+      },
+      "detail": {
+        "title": "Services"
+      },
+      "description": "Description",
+      "startDate": "Start Date",
+      "agree": "Agree",
+      "signDocUrl": "Sign Doc Url",
+      "hardware": "Hardware",
+      "training": "Training",
+      "software": "Software"
+    }
+  }
+}

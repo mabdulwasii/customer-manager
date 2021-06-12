@@ -1,0 +1,76 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "profile"
+    },
+    {
+      "relationshipName": "address",
+      "otherEntityName": "address",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "streetAddress",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "profile"
+    },
+    {
+      "relationshipName": "hardware",
+      "otherEntityName": "hardware",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "profile"
+    },
+    {
+      "relationshipName": "software",
+      "otherEntityName": "software",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "profile"
+    },
+    {
+      "relationshipName": "training",
+      "otherEntityName": "training",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "profile"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "profileId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "MALE,FEMALE",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "validId",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210308090642",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "profile",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination"
+}

@@ -1,0 +1,54 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "hardware",
+      "otherEntityName": "hardware",
+      "relationshipType": "one-to-one",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "services"
+    },
+    {
+      "relationshipName": "training",
+      "otherEntityName": "training",
+      "relationshipType": "one-to-one",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "services"
+    },
+    {
+      "relationshipName": "software",
+      "otherEntityName": "software",
+      "relationshipType": "one-to-one",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "services"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "agree",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "signDocUrl",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210308112644",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "services",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "infinite-scroll"
+}

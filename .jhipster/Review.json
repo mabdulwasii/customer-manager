@@ -1,0 +1,58 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "profile",
+      "otherEntityName": "profile",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "phoneNumber",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "review"
+    },
+    {
+      "relationshipName": "hardware",
+      "otherEntityName": "hardware",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "gadget",
+      "otherEntityRelationshipName": "review"
+    },
+    {
+      "relationshipName": "training",
+      "otherEntityName": "training",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name",
+      "otherEntityRelationshipName": "review"
+    },
+    {
+      "relationshipName": "software",
+      "otherEntityName": "software",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "technology",
+      "otherEntityRelationshipName": "review"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": 0,
+      "fieldValidateRulesMax": "5"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210308095617",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "review",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "infinite-scroll"
+}

@@ -1,0 +1,291 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-1">
+        <createSequence incrementBy="50" sequenceName="sequence_generator" startValue="1"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-2">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="addressPK"/>
+            </column>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="state" type="VARCHAR(255)"/>
+            <column name="street_address" type="VARCHAR(255)"/>
+            <column name="street_number" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-3">
+        <createTable tableName="hardware">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="hardwarePK"/>
+            </column>
+            <column name="brand_name" type="VARCHAR(255)"/>
+            <column name="gadget" type="VARCHAR(255)"/>
+            <column name="imei_number" type="VARCHAR(255)"/>
+            <column name="model" type="VARCHAR(255)"/>
+            <column name="serial_number" type="VARCHAR(255)"/>
+            <column name="state" type="VARCHAR(255)"/>
+            <column name="profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_category_id" type="BIGINT"/>
+            <column name="services_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-4">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_authorityPK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-5">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-6">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-7">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(10)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reset_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-8">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-9">
+        <createTable tableName="payment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="paymentPK"/>
+            </column>
+            <column name="amount" type="numeric(21, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="balance" type="numeric(21, 2)"/>
+            <column name="date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="payment_type" type="VARCHAR(255)"/>
+            <column name="hardware_id" type="BIGINT"/>
+            <column name="software_id" type="BIGINT"/>
+            <column name="training_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-10">
+        <createTable tableName="profile">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="profilePK"/>
+            </column>
+            <column name="date_of_birth" type="date"/>
+            <column name="gender" type="VARCHAR(255)"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="profile_id" type="VARCHAR(255)"/>
+            <column name="valid_id" type="VARCHAR(255)"/>
+            <column name="address_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-11">
+        <createTable tableName="review">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="reviewPK"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)"/>
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hardware_id" type="BIGINT"/>
+            <column name="profile_id" type="BIGINT"/>
+            <column name="software_id" type="BIGINT"/>
+            <column name="training_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-12">
+        <createTable tableName="service_category">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="service_categoryPK"/>
+            </column>
+            <column name="fixed_amount" type="numeric(21, 2)"/>
+            <column name="has_fixed_price" type="BOOLEAN"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-13">
+        <createTable tableName="services">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="servicesPK"/>
+            </column>
+            <column name="agree" type="BOOLEAN"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="sign_doc_url" type="VARCHAR(255)"/>
+            <column name="start_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-14">
+        <createTable tableName="software">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="softwarePK"/>
+            </column>
+            <column name="amount" type="numeric(21, 2)"/>
+            <column name="details" type="VARCHAR(255)"/>
+            <column name="technology" type="VARCHAR(255)"/>
+            <column name="profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_category_id" type="BIGINT"/>
+            <column name="services_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-15">
+        <createTable tableName="training">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="trainingPK"/>
+            </column>
+            <column name="amount" type="numeric(21, 2)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="profile_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="service_category_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="services_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-16">
+        <addUniqueConstraint columnNames="services_id" constraintName="UC_HARDWARESERVICES_ID_COL" tableName="hardware"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-17">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-18">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-19">
+        <addUniqueConstraint columnNames="address_id" constraintName="UC_PROFILEADDRESS_ID_COL" tableName="profile"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-20">
+        <addUniqueConstraint columnNames="user_id" constraintName="UC_PROFILEUSER_ID_COL" tableName="profile"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-21">
+        <addUniqueConstraint columnNames="profile_id" constraintName="UC_REVIEWPROFILE_ID_COL" tableName="review"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-22">
+        <addUniqueConstraint columnNames="services_id" constraintName="UC_SOFTWARESERVICES_ID_COL" tableName="software"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-23">
+        <addUniqueConstraint columnNames="services_id" constraintName="UK_794qhk7sy3r1oq45ibgc5omu7" tableName="training"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-24">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-25">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-26">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="profile" constraintName="FK2hsdsntwy25qr73fsvd7l3wu7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="address" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-27">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-28">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="review" constraintName="FK8al2deis8pp34djo6gw6arss0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-29">
+        <addForeignKeyConstraint baseColumnNames="services_id" baseTableName="software" constraintName="FKaugh9gjq262hheb5esr66bs5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="services" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-30">
+        <addForeignKeyConstraint baseColumnNames="software_id" baseTableName="payment" constraintName="FKbb6nexx3b5e1pffmvmxwc05n3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="software" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-31">
+        <addForeignKeyConstraint baseColumnNames="hardware_id" baseTableName="review" constraintName="FKcoqmwdawmhiyenkreagabvuyo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="hardware" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-32">
+        <addForeignKeyConstraint baseColumnNames="software_id" baseTableName="review" constraintName="FKd5o3c05ywep96la88kl1cyl7c" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="software" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-33">
+        <addForeignKeyConstraint baseColumnNames="service_category_id" baseTableName="training" constraintName="FKhdciic8ugr39al15bcelw9dxi" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="service_category" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-34">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="profile" constraintName="FKhpks30secbw6ww6sjplw9xtth" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-35">
+        <addForeignKeyConstraint baseColumnNames="hardware_id" baseTableName="payment" constraintName="FKhticy3yuw54as1kylfc1mfltm" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="hardware" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-36">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="training" constraintName="FKic66snb2iuxkn0h4epw12ucxp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-37">
+        <addForeignKeyConstraint baseColumnNames="service_category_id" baseTableName="software" constraintName="FKitlx8ifrhdhp1ynmtu4csf7o0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="service_category" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-38">
+        <addForeignKeyConstraint baseColumnNames="service_category_id" baseTableName="hardware" constraintName="FKjedxg77fwnsxjyx1wj22vfqou" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="service_category" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-39">
+        <addForeignKeyConstraint baseColumnNames="training_id" baseTableName="payment" constraintName="FKkcdqleb1eg24v3hkuj56eshg4" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="training" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-40">
+        <addForeignKeyConstraint baseColumnNames="services_id" baseTableName="hardware" constraintName="FKn2ysru3qnp3wey4h02dr5ql3j" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="services" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-41">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="hardware" constraintName="FKp678s63bif3mgcdgwemifrlm2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-42">
+        <addForeignKeyConstraint baseColumnNames="profile_id" baseTableName="software" constraintName="FKq7t3xow2gn9985udj9u6dglld" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="profile" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-43">
+        <addForeignKeyConstraint baseColumnNames="training_id" baseTableName="review" constraintName="FKrypn36huj1ptpmnqbhri65ccl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="training" validate="true"/>
+    </changeSet>
+    <changeSet author="ABDULWASIU-MORONKOLA (generated)" id="1615233993650-44">
+        <addForeignKeyConstraint baseColumnNames="services_id" baseTableName="training" constraintName="FKt06bwla64d1ikl0xje7xo82ab" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="services" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
