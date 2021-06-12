@@ -1,0 +1,33 @@
+{
+  "customerManagerApp": {
+    "hardware": {
+      "home": {
+        "title": "Hardware",
+        "createLabel": "Create a new Hardware",
+        "createOrEditLabel": "Create or edit a Hardware",
+        "search": "Search for Hardware",
+        "notFound": "No Hardware found"
+      },
+      "created": "A new Hardware is created with identifier {{ param }}",
+      "updated": "A Hardware is updated with identifier {{ param }}",
+      "deleted": "A Hardware is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hardware {{ id }}?"
+      },
+      "detail": {
+        "title": "Hardware"
+      },
+      "gadget": "Gadget",
+      "model": "Model",
+      "brandName": "Brand Name",
+      "serialNumber": "Serial Number",
+      "imeiNumber": "Imei Number",
+      "state": "State",
+      "services": "Services",
+      "review": "Review",
+      "payment": "Payment",
+      "serviceCategory": "Service Category",
+      "profile": "Profile"
+    }
+  }
+}

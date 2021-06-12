@@ -1,0 +1,68 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "serviceCategory",
+      "otherEntityName": "serviceCategory",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name",
+      "otherEntityRelationshipName": "software"
+    },
+    {
+      "relationshipName": "payment",
+      "otherEntityName": "payment",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "software"
+    },
+    {
+      "relationshipName": "services",
+      "otherEntityName": "services",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "description",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "software"
+    },
+    {
+      "relationshipName": "review",
+      "otherEntityName": "review",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "software"
+    },
+
+    {
+      "relationshipName": "profile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
+      "otherEntityField": "phoneNumber",
+      "otherEntityRelationshipName": "software"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "technology",
+      "fieldType": "Technology",
+      "fieldValues": "WEB_DESIGN,WEB_DEVELOPMENT,PHP,JAVA,JAVASCRIPT"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "details",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210308120643",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "software",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "no"
+}

@@ -1,0 +1,78 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "services",
+      "otherEntityName": "services",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "description",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "hardware"
+    },
+    {
+      "relationshipName": "review",
+      "otherEntityName": "review",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "hardware"
+    },
+    {
+      "relationshipName": "payment",
+      "otherEntityName": "payment",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "hardware"
+    },
+    {
+      "relationshipName": "serviceCategory",
+      "otherEntityName": "serviceCategory",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name",
+      "otherEntityRelationshipName": "hardware"
+    },
+    {
+      "relationshipName": "profile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
+      "otherEntityField": "phoneNumber",
+      "otherEntityRelationshipName": "hardware"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "gadget",
+      "fieldType": "Gadget",
+      "fieldValues": "PHONE,TABLET,LAPTOP,OTHERS"
+    },
+    {
+      "fieldName": "model",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "brandName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serialNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imeiNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210308115623",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "hardware",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "infinite-scroll"
+}

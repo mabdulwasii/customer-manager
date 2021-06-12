@@ -1,0 +1,11 @@
+{
+  "customerManagerApp": {
+    "Gadget": {
+      "null": "",
+      "PHONE": "PHONE",
+      "TABLET": "TABLET",
+      "LAPTOP": "LAPTOP",
+      "OTHERS": "OTHERS"
+    }
+  }
+}

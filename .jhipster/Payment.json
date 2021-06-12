@@ -1,0 +1,58 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "software",
+      "otherEntityName": "software",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "technology",
+      "otherEntityRelationshipName": "payment"
+    },
+    {
+      "relationshipName": "training",
+      "otherEntityName": "training",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name",
+      "otherEntityRelationshipName": "payment"
+    },
+    {
+      "relationshipName": "hardware",
+      "otherEntityName": "hardware",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "gadget",
+      "otherEntityRelationshipName": "payment"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": []
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": 0
+    }
+  ],
+  "changelogDate": "20210308100014",
+  "dto": "mapstruct",
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass",
+  "entityTableName": "payment",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "infinite-scroll"
+}

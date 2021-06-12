@@ -1,0 +1,30 @@
+{
+  "customerManagerApp": {
+    "software": {
+      "home": {
+        "title": "Software",
+        "createLabel": "Create a new Software",
+        "createOrEditLabel": "Create or edit a Software",
+        "search": "Search for Software",
+        "notFound": "No Software found"
+      },
+      "created": "A new Software is created with identifier {{ param }}",
+      "updated": "A Software is updated with identifier {{ param }}",
+      "deleted": "A Software is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Software {{ id }}?"
+      },
+      "detail": {
+        "title": "Software"
+      },
+      "technology": "Technology",
+      "amount": "Amount",
+      "details": "Details",
+      "serviceCategory": "Service Category",
+      "payment": "Payment",
+      "services": "Services",
+      "review": "Review",
+      "profile": "Profile"
+    }
+  }
+}
